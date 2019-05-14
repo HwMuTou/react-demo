@@ -5,7 +5,7 @@ import App from './module/App'
 import Home from './module/home/Home'
 import Game from './module/game/Game'
 
-class RouteDef extends React.Component {
+class AppRoute extends React.Component {
     render() {
         return (
             <BrowserRouter>
@@ -18,4 +18,4 @@ class RouteDef extends React.Component {
     }
 }
 
-export default RouteDef
+export default AppRoute
