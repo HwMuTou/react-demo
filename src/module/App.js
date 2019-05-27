@@ -7,8 +7,8 @@ class App extends React.Component {
             <div>
                 <h1>React Router Tutorial</h1>
                 <ul>
-                    <li><NavLink to="/home" activeClassName={'active'}>Home</NavLink></li>
-                    <li><NavLink to="/game" activeClassName={'active'}>Game</NavLink></li>
+                    <li><NavLink to="/home">Home</NavLink></li>
+                    <li><NavLink to="/game">Game</NavLink></li>
                 </ul>
 
                 {this.props.children}
