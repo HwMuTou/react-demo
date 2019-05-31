@@ -5,9 +5,7 @@ import {decrement, increment, ModifyAction} from "./CounterAction";
 import {Dispatch} from "react";
 import {CounterState} from "./CounterState";
 
-const mapStateToProps = (state: {CounterReducer: CounterState}): { value: CounterState } => ({
-    value: state['CounterReducer']
-});
+const mapStateToProps = (state: CounterState): CounterState => (state);
 
 // 将 对应action 插入到组件的 props 中
 const mapDispatchToProps = (dispatch: Dispatch<ModifyAction>) => ({
