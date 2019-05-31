@@ -1,8 +1,6 @@
-import {combineReducers, createStore} from "redux";
-import {TodoReducer} from "./todo/TodoModel";
+import {createStore} from "redux";
+import rootReducer from "./reducers/Index";
 
-const rootStore = combineReducers(
-    {todo: TodoReducer}
-    );
+export const store = createStore(rootReducer);
 
-export const store = createStore(rootStore);
+console.log(store.getState());
