@@ -13,4 +13,4 @@ export interface ModifyAction extends Action {
 export const increment = createAction<ModifyAction>(INCREMENT);
 
 // 减少 state 次数的方法
-export const decrement = createAction(DECREMENT);
+export const decrement = createAction<ModifyAction>(DECREMENT);
