@@ -5,8 +5,8 @@ import {CounterState} from "../count/CounterState";
 export default (state = {count: 0}, action: ModifyAction): CounterState => {
     switch (action.type) {
         case INCREMENT:
-            state['count'] = state.count + 1;
-            return state;
+            state.count = state.count + 1;
+            break;
         case DECREMENT:
             state.count = state.count - 1;
             break;
