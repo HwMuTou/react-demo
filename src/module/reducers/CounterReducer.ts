@@ -1,23 +1,24 @@
-// 处理并返回 state
-import {DECREMENT, INCREMENT, ModifyAction} from "../count/CounterAction";
+/*
+ 处理并返回 state
+*/
+import {DECREMENT, INCREMENT} from "../count/CounterAction";
 import {CounterState} from "../count/CounterState";
+import {handleActions} from "redux-actions-helper";
 
 const initCounterState: CounterState = {
     count: 0
 };
 
-export default (state = initCounterState, action: ModifyAction): CounterState => {
-    //TODO you should change the state object. just create new Object.
-    switch (action.type) {
-        case INCREMENT:
-            return {
-                count: state.count + 1
-            };
-        case DECREMENT:
-            return {
-                count: state.count - 1
-            };
-        default:
-            return state
+//TODO you should change the state object. just create new Object.
+export default handleActions<CounterState>({
+    [INCREMENT](state: CounterState) {
+        return {
+            count: state.count + 1
+        };
+    },
+    [DECREMENT](state: CounterState) {
+        return {
+            count: state.count + 1
+        };
     }
-}
+}, initCounterState);
