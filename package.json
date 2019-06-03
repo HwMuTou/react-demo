@@ -9,7 +9,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "redux-actions-helper": "^1.0.4",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "typesafe-actions": "^4.4.0"
   },
   "devDependencies": {
     "@types/jest": "^21.1.9",

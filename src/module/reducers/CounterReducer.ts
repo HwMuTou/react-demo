@@ -2,14 +2,22 @@
 import {DECREMENT, INCREMENT, ModifyAction} from "../count/CounterAction";
 import {CounterState} from "../count/CounterState";
 
-export default (state = {count: 0}, action: ModifyAction): CounterState => {
+const initCounterState: CounterState = {
+    count: 0
+};
+
+export default (state = initCounterState, action: ModifyAction): CounterState => {
+    //TODO you should change the state object. just create new Object.
     switch (action.type) {
         case INCREMENT:
-            state.count = state.count + 1;
-            break;
+            return {
+                count: state.count + 1
+            };
         case DECREMENT:
-            state.count = state.count - 1;
-            break;
+            return {
+                count: state.count - 1
+            };
+        default:
+            return state
     }
-    return state
 }

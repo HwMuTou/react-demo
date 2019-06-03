@@ -4,8 +4,11 @@ import {connect} from "react-redux";
 import {decrement, increment, ModifyAction} from "./CounterAction";
 import {Dispatch} from "react";
 import {CounterState} from "./CounterState";
+import {RootState} from "../reducers/RootState"
 
-const mapStateToProps = (state: CounterState): CounterState => (state);
+const mapStateToProps = (state: RootState): CounterState => {
+    return state.counter
+};
 
 // 将 对应action 插入到组件的 props 中
 const mapDispatchToProps = (dispatch: Dispatch<ModifyAction>) => ({
