@@ -18,7 +18,7 @@ export default handleActions<CounterState>({
     },
     [DECREMENT](state: CounterState) {
         return {
-            count: state.count + 1
+            count: state.count - 1
         };
     }
 }, initCounterState);

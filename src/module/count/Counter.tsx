@@ -2,8 +2,8 @@ import * as React from 'react';
 
 // 创建类型接口
 export interface CounterProps {
-    count: number,
-    onIncrement: () => void,
+    count: number
+    onIncrement: () => void
     onDecrement: () => void
 }
 
