@@ -1266,11 +1266,6 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^21.1.9":
-  version "21.1.10"
-  resolved "https://registry.npm.taobao.org/@types/jest/download/@types/jest-21.1.10.tgz#dcacb5217ddf997a090cc822bba219b4b2fd7984"
-  integrity sha1-3Ky1IX3fmXoJDMgiu6IZtLL9eYQ=
-
 "@types/node@*":
   version "12.0.5"
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.0.5.tgz#ac14404c33d1a789973c45379a67f7f7e58a01b9"
@@ -1288,7 +1283,7 @@
 
 "@types/react-dom@16.8.4":
   version "16.8.4"
-  resolved "https://registry.npm.taobao.org/@types/react-dom/download/@types/react-dom-16.8.4.tgz#7fb7ba368857c7aa0f4e4511c4710ca2c5a12a88"
+  resolved "https://registry.npm.taobao.org/@types/react-dom/download/@types/react-dom-16.8.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact-dom%2Fdownload%2F%40types%2Freact-dom-16.8.4.tgz#7fb7ba368857c7aa0f4e4511c4710ca2c5a12a88"
   integrity sha1-f7e6NohXx6oPTkURxHEMosWhKog=
   dependencies:
     "@types/react" "*"
@@ -1322,7 +1317,7 @@
 
 "@types/react@*":
   version "16.8.19"
-  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.8.19.tgz#629154ef05e2e1985cdde94477deefd823ad9be3"
+  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.8.19.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-16.8.19.tgz#629154ef05e2e1985cdde94477deefd823ad9be3"
   integrity sha1-YpFU7wXi4Zhc3elEd97v2COtm+M=
   dependencies:
     "@types/prop-types" "*"
@@ -1330,7 +1325,7 @@
 
 "@types/react@16.8.18":
   version "16.8.18"
-  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.8.18.tgz#fe66fb748b0b6ca9709d38b87b2d1356d960a511"
+  resolved "https://registry.npm.taobao.org/@types/react/download/@types/react-16.8.18.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Freact%2Fdownload%2F%40types%2Freact-16.8.18.tgz#fe66fb748b0b6ca9709d38b87b2d1356d960a511"
   integrity sha1-/mb7dIsLbKlwnTi4ey0TVtlgpRE=
   dependencies:
     "@types/prop-types" "*"
@@ -8053,7 +8048,7 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
 
 react-redux@^7.0.3:
   version "7.0.3"
-  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.0.3.tgz#983c5a6de81cb1e696bd1c090ba826545f9170f1"
+  resolved "https://registry.npm.taobao.org/react-redux/download/react-redux-7.0.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-redux%2Fdownload%2Freact-redux-7.0.3.tgz#983c5a6de81cb1e696bd1c090ba826545f9170f1"
   integrity sha1-mDxabegcseaWvRwJC6gmVF+RcPE=
   dependencies:
     "@babel/runtime" "^7.4.3"
@@ -9579,7 +9574,7 @@ typesafe-actions@^4.4.0:
   resolved "https://registry.npm.taobao.org/typesafe-actions/download/typesafe-actions-4.4.0.tgz#217320465f5921f438adda1e9ff5da09182bb266"
   integrity sha1-IXMgRl9ZIfQ4rdoen/XaCRgrsmY=
 
-typescript@^3.4.5:
+typescript@^3.5.1:
   version "3.5.1"
   resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.5.1.tgz#ba72a6a600b2158139c5dd8850f700e231464202"
   integrity sha1-unKmpgCyFYE5xd2IUPcA4jFGQgI=
@@ -10045,7 +10040,7 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-fetch@3.0.0:
+whatwg-fetch@3.0.0, whatwg-fetch@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
   integrity sha1-/IBORYzEYACbGiuWa8iBfSV4rvs=
