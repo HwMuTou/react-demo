@@ -1,8 +1,8 @@
 import * as React from 'react';
+import {CounterState} from "../reducers/CounterState";
 
 // 创建类型接口
-export interface CounterProps {
-    count: number
+export interface CounterProps extends CounterState{
     onIncrement: () => void
     onDecrement: () => void
 }

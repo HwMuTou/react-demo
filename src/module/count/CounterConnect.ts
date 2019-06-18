@@ -3,7 +3,7 @@ import Counter from "./Counter";
 import {connect} from "react-redux";
 import {decrement, increment, ModifyAction} from "./CounterAction";
 import {Dispatch} from "react";
-import {CounterState} from "./CounterState";
+import {CounterState} from "../reducers/CounterState";
 import {RootState} from "../reducers/RootState"
 
 const mapStateToProps = (state: RootState): CounterState => {
