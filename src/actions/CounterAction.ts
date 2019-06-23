@@ -6,11 +6,12 @@ export const INCREMENT= "INCREMENT";
 export const DECREMENT= "DECREMENT";
 
 // 定义 modifyAction 类型，包含 IINCREMENTAction 和 IDECREMENTAction 接口类型
-export interface ModifyAction extends Action {
+export interface CounterAction extends Action {
 }
 
 // 增加 state 次数的方法
-export const increment = createAction<ModifyAction>(INCREMENT);
+export const increment = createAction<CounterAction>(INCREMENT);
 
 // 减少 state 次数的方法
-export const decrement = createAction<ModifyAction>(DECREMENT);
+export const decrement = createAction<CounterAction>(DECREMENT);
+

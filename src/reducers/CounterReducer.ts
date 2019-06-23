@@ -1,9 +1,9 @@
 /*
  处理并返回 state
 */
-import {DECREMENT, INCREMENT} from "../count/CounterAction";
+import {DECREMENT, INCREMENT} from "../actions/CounterAction";
 import {handleActions} from "redux-actions-helper";
-import {CounterState} from "../count/Counter";
+import {CounterState} from "../components/Counter";
 
 export default handleActions<CounterState>({
     [INCREMENT](state: CounterState) {
