@@ -1,10 +1,9 @@
 // 将 reducer 中的状态插入到组件的 props 中
-import Counter from "./Counter";
+import Counter, {CounterState} from "./Counter";
 import {connect} from "react-redux";
 import {decrement, increment, ModifyAction} from "./CounterAction";
 import {Dispatch} from "react";
-import {CounterState} from "../reducers/CounterState";
-import {RootState} from "../reducers/RootState"
+import {RootState} from "../reducers/RootReducer";
 
 const mapStateToProps = (state: RootState): CounterState => {
     return state.counter

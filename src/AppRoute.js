@@ -4,8 +4,8 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import App from './module/App'
 import Home from './module/home/Home'
 import Game from './module/game/Game'
-import CounterConnect from "./module/count/CounterConnect";
-import {store} from "./module/Store";
+import CounterConnect from "./module/count/CounterPage";
+import {store} from "./module/reducers/Store";
 import {Provider} from 'react-redux'
 
 class AppRoute extends React.Component {
@@ -14,10 +14,10 @@ class AppRoute extends React.Component {
             <BrowserRouter>
                 <Provider store={store}>
 
-                <Route path="/" component={App}/>
-                <Route path="/home" component={Home}/>
-                <Route path="/game" component={Game}/>
-                <Route path="/counter" component={CounterConnect}/>
+                    <Route path="/" component={App}/>
+                    <Route path="/home" component={Home}/>
+                    <Route path="/game" component={Game}/>
+                    <Route path="/counter" component={CounterConnect}/>
                 </Provider>
             </BrowserRouter>
         );

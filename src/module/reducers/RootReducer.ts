@@ -1,8 +1,8 @@
 import CounterReducer from "./CounterReducer";
-import TodoReducer from "./TodoReducer";
+import {StateType} from "typesafe-actions";
 
 export const RootReducer = {
-    todo: TodoReducer,
     counter: CounterReducer
 };
 
+export type RootState = StateType<typeof RootReducer>;

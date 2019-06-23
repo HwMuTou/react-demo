@@ -2,10 +2,9 @@
  处理并返回 state
 */
 import {DECREMENT, INCREMENT} from "../count/CounterAction";
-import {CounterState} from "./CounterState";
 import {handleActions} from "redux-actions-helper";
+import {CounterState} from "../count/Counter";
 
-//TODO you should change the state object. just create new Object.
 export default handleActions<CounterState>({
     [INCREMENT](state: CounterState) {
         return {

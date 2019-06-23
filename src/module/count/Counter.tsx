@@ -1,13 +1,20 @@
 import * as React from 'react';
-import {CounterState} from "../reducers/CounterState";
+
+export interface CounterState {
+    count: number
+}
 
 // 创建类型接口
-export interface CounterProps extends CounterState{
+export interface CounterProps extends CounterState {
     onIncrement: () => void
     onDecrement: () => void
 }
 
-class Counter extends React.Component<CounterProps> {
+class Counter extends React.Component<CounterProps, CounterState> {
+
+    public constructor(props: CounterProps) {
+        super(props)
+    }
 
     public render() {
         const count = this.props.count;
