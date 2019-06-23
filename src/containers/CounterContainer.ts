@@ -1,7 +1,7 @@
 // 将 reducer 中的状态插入到组件的 props 中
 import Counter, {CounterState} from "../components/Counter";
 import {connect} from "react-redux";
-import {decrement, increment, ModifyAction} from "../actions/CounterAction";
+import {decrement, increment, CounterAction} from "../actions/CounterAction";
 import {Dispatch} from "react";
 import {RootState} from "../reducers/RootReducer";
 
@@ -10,9 +10,7 @@ const mapStateToProps = (state: RootState): CounterState => {
 };
 
 // 将 对应action 插入到组件的 props 中
-const mapDispatchToProps = function (dispatch: Dispatch<ModifyAction>) {
-    console.log(decrement());
-    console.log(increment());
+const mapDispatchToProps = function (dispatch: Dispatch<CounterAction>) {
     return {
         onDecrement: () => dispatch(decrement()),
         onIncrement: () => dispatch(increment())
