@@ -21,22 +21,20 @@ class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState>
 
     private onAddClick() {
         const currentValue = this.state.number + 1;
-        this.setState({
-            number: currentValue
-        });
-        this.props.onValueChange(currentValue)
+        this.setCurrentValueWithCallback(currentValue)
     }
 
     public onMinusClick() {
         const currentValue = this.state.number - 1;
-        this.setState({
-            number: currentValue
-        });
-        this.props.onValueChange(currentValue)
+        this.setCurrentValueWithCallback(currentValue)
     }
 
     public onInputChange(event: ChangeEvent<HTMLInputElement>) {
         const currentValue = parseFloat(event.target.value);
+        this.setCurrentValueWithCallback(currentValue)
+    }
+
+    private setCurrentValueWithCallback(currentValue: number){
         this.setState({
             number: currentValue
         });
