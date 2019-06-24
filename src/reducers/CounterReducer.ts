@@ -1,19 +1,14 @@
 /*
  处理并返回 state
 */
-import {DECREMENT, INCREMENT} from "../actions/CounterAction";
+import {CounterAction, ON_VALUE_CHANGE} from "../actions/CounterAction";
 import {handleActions} from "redux-actions-helper";
-import {CounterState} from "../components/Counter";
+import {NumberPickerState} from "../components/NumberPicker";
 
-export default handleActions<CounterState>({
-    [INCREMENT](state: CounterState) {
+export default handleActions<NumberPickerState>({
+    [ON_VALUE_CHANGE](state: NumberPickerState, action: CounterAction) {
         return {
-            count: state.count + 1
-        };
-    },
-    [DECREMENT](state: CounterState) {
-        return {
-            count: state.count - 1
+            number: action.payload
         };
     }
-}, {count: 0});
+}, {number: 0});
