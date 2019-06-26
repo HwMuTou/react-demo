@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import AppRoute from "./AppRoute";
+import 'semantic-ui-css/semantic.min.css'
 
 ReactDOM.render(<AppRoute />, document.getElementById('root'));
 

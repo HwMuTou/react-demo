@@ -11,6 +11,8 @@
     "react-scripts": "3.0.1",
     "redux-actions-helper": "^1.0.4",
     "reselect": "^4.0.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.87.2",
     "typesafe-actions": "^4.4.0",
     "whatwg-fetch": "^3.0.0"
   },

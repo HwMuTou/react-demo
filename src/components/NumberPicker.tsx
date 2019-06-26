@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {ChangeEvent} from "../../node_modules/@types/react-router/node_modules/@types/react";
+import {Button, Input, Segment} from "semantic-ui-react";
 
 export interface NumberPickerState {
     number: number
@@ -19,47 +20,37 @@ class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState>
         }
     }
 
-    private onAddClick() {
+    private onAddClick = () => {
         const currentValue = this.state.number + 1;
         this.setCurrentValueWithCallback(currentValue)
-    }
+    };
 
-    public onMinusClick() {
+    public onMinusClick = () => {
         const currentValue = this.state.number - 1;
         this.setCurrentValueWithCallback(currentValue)
-    }
+    };
 
-    public onInputChange(event: ChangeEvent<HTMLInputElement>) {
+    public onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const currentValue = parseFloat(event.target.value);
         this.setCurrentValueWithCallback(currentValue)
-    }
+    };
 
-    private setCurrentValueWithCallback(currentValue: number){
+    private setCurrentValueWithCallback = (currentValue: number) => {
         this.setState({
             number: currentValue
         });
         this.props.onValueChange(currentValue)
-    }
+    };
 
     public render() {
         const number = this.state.number;
 
         return (
-            <div>
-                <button onClick={() => {
-                    this.onAddClick()
-                }} style={{marginRight: 20}}> +
-                </button>
-
-                <input value={number} onChange={(event) => {
-                    this.onInputChange(event)
-                }}/>
-
-                <button onClick={() => {
-                    this.onMinusClick()
-                }}> -
-                </button>
-            </div>
+            <Segment>
+                <Button primary={true} content={"-"} onClick={this.onMinusClick} icon={"arrow alternate circle down"}/>
+                <Input value={number} onChange={this.onInputChange} label={"当前值"}/>
+                <Button primary={true} content={"+"} onClick={this.onAddClick} icon={"arrow alternate circle up"}/>
+            </Segment>
         )
     }
 }
