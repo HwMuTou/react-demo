@@ -1,16 +1,17 @@
-import React from "react"
+import {Component} from "react"
 import Square from "./Square"
+import React from "react";
 
-class Board extends React.Component {
+class Board extends Component {
 
-    renderSquare(i) {
+    renderSquare = (i) => {
         return (
             <Square
                 value={this.props.squares[i]}
                 onClick={() => this.props.onClick(i)}
             />
         );
-    }
+    };
 
     render() {
 
