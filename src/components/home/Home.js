@@ -1,9 +1,9 @@
-import {Component} from "react"
+import React from "react"
 import logo from "./logo.svg";
 import './Home.css'
 import './logo.svg'
 
-class Home extends Component {
+class Home extends React.Component {
 
     render() {
         return (

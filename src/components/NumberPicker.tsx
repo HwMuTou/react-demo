@@ -1,5 +1,6 @@
 import {Button, Input, Segment} from "semantic-ui-react";
-import {ChangeEvent, Component} from "react";
+import {ChangeEvent} from "react";
+import React from "react";
 
 export interface NumberPickerState {
     number: number
@@ -10,7 +11,7 @@ export interface NumberPickerProps extends NumberPickerState {
     onValueChange: (currentNumber: number) => any
 }
 
-class NumberPicker extends Component<NumberPickerProps, NumberPickerState> {
+class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState> {
 
     public constructor(props: NumberPickerProps) {
         super(props);
