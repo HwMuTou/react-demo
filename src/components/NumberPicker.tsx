@@ -1,7 +1,6 @@
 import {Button, Input, Segment} from "semantic-ui-react";
 import {ChangeEvent} from "react";
 import React from "react";
-import TodoListContainer from "../containers/TodoListContainer";
 
 export interface NumberPickerState {
     number: number
@@ -51,7 +50,6 @@ class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState>
                 <Button primary={true} content={"-"} onClick={this.onMinusClick} icon={"arrow alternate circle down"}/>
                 <Input value={number} onChange={this.onInputChange} label={"当前值"}/>
                 <Button primary={true} content={"+"} onClick={this.onAddClick} icon={"arrow alternate circle up"}/>
-                <TodoListContainer/>
             </Segment>
         )
     }

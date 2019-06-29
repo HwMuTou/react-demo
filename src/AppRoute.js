@@ -7,6 +7,7 @@ import Game from './components/game/Game'
 import CounterContainer from "./containers/CounterContainer";
 import {store} from "./reducers/Store";
 import {Provider} from 'react-redux'
+import TodoListContainer from "./containers/TodoListContainer";
 
 class AppRoute extends React.Component {
     render() {
@@ -18,6 +19,7 @@ class AppRoute extends React.Component {
                     <Route path="/home" component={Home}/>
                     <Route path="/game" component={Game}/>
                     <Route path="/counter" component={CounterContainer}/>
+                    <Route path="/todo" component={TodoListContainer}/>
                 </Provider>
             </BrowserRouter>
         );

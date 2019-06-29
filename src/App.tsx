@@ -12,6 +12,7 @@ class App extends React.Component {
                     <li><NavLink to="/home">Home</NavLink></li>
                     <li><NavLink to="/game">Game</NavLink></li>
                     <li><NavLink to="/counter">Counter</NavLink></li>
+                    <li><NavLink to="/todo">TODO</NavLink></li>
                 </ul>
 
                 {this.props.children}
