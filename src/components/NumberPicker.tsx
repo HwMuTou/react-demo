@@ -1,4 +1,4 @@
-import {Button, Input, Segment} from "semantic-ui-react";
+import {Button, Input, Segment, SegmentGroup} from "semantic-ui-react";
 import {ChangeEvent} from "react";
 import React from "react";
 
@@ -31,7 +31,7 @@ class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState>
     };
 
     public onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const currentValue = parseFloat(event.target.value);
+        const currentValue = Number(event.target.value);
         this.setCurrentValueWithCallback(currentValue)
     };
 
@@ -46,11 +46,30 @@ class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState>
         const number = this.state.number;
 
         return (
-            <Segment>
-                <Button primary={true} content={"-"} onClick={this.onMinusClick} icon={"arrow alternate circle down"}/>
-                <Input value={number} onChange={this.onInputChange} label={"当前值"}/>
-                <Button primary={true} content={"+"} onClick={this.onAddClick} icon={"arrow alternate circle up"}/>
-            </Segment>
+            <SegmentGroup>
+                <Segment>
+                    <Button primary={true}
+                            content={"-"}
+                            onClick={this.onMinusClick}
+                            icon={"arrow alternate circle down"}
+                            labelPosition={"left"}
+                            label={number}/>
+                </Segment>
+
+                <Segment>
+                    <Button primary={true}
+                            content={"+"}
+                            onClick={this.onAddClick}
+                            icon={"arrow alternate circle up"}
+                            labelPosition={"left"}
+                            label={number}/>
+                </Segment>
+                <Segment>
+                    <Input value={number}
+                           onChange={this.onInputChange}
+                           label={"当前值"}/>
+                </Segment>
+            </SegmentGroup>
         )
     }
 }
