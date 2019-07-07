@@ -60,9 +60,9 @@ export class TodoList extends React.Component<TodoListProps, TodoListComponentSt
     public todoListRender = () => {
         const todoList = dash.sortBy(this.props.todoList, (item: Todo) => item.value);
 
-        return todoList.map(todo => {
+        return todoList.map((todo: Todo, index: number) => {
             return (
-                <MessageItem>
+                <MessageItem key={index}>
                     <Button icon={todo.icon}
                             content={todo.value}
                             labelPosition={"right"}

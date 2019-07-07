@@ -12,16 +12,16 @@ import TodoListContainer from "./containers/TodoListContainer";
 class AppRoute extends React.Component {
     render() {
         return (
-            <BrowserRouter>
-                <Provider store={store}>
-
+            <Provider store={store}>
+                <BrowserRouter>
                     <Route path="/" component={App}/>
                     <Route path="/home" component={Home}/>
                     <Route path="/game" component={Game}/>
                     <Route path="/counter" component={CounterContainer}/>
                     <Route path="/todo" component={TodoListContainer}/>
-                </Provider>
-            </BrowserRouter>
+
+                </BrowserRouter>
+            </Provider>
         );
     }
 }
