@@ -1,6 +1,10 @@
 import React from 'react';
 
-import {NavLink} from "react-router-dom";
+import {NavLink, Route, Switch} from "react-router-dom";
+import Home from "./components/home/Home";
+import Game from "./components/game/Game";
+import CounterContainer from "./containers/CounterContainer";
+import TodoListContainer from "./containers/TodoListContainer";
 
 
 class App extends React.Component {
@@ -15,7 +19,13 @@ class App extends React.Component {
                     <li><NavLink to="/todo">TODO</NavLink></li>
                 </ul>
 
-                {this.props.children}
+                <Switch>
+                    <Route path="/home" component={Home}/>
+                    <Route path="/game" component={Game}/>
+                    <Route path="/counter" component={CounterContainer}/>
+                    <Route path="/todo" component={TodoListContainer}/>
+                </Switch>
+
             </div>
         )
     }
