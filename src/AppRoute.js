@@ -10,7 +10,7 @@ class AppRoute extends React.Component {
         return (
             <Provider store={store}>
                 <BrowserRouter>
-                    <Route path="/" component={App}/>
+                    <Route component={App}/>
 
                 </BrowserRouter>
             </Provider>
