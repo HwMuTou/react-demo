@@ -62,7 +62,7 @@ export class TodoList extends React.Component<TodoListProps, TodoListComponentSt
 
         return todoList.map((todo: Todo, index: number) => {
             return (
-                <MessageItem key={index}>
+                <MessageItem key={todo.value + index}>
                     <Button icon={todo.icon}
                             content={todo.value}
                             labelPosition={"right"}
