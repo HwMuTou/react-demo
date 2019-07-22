@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {NavLink, Route, Switch, withRouter, RouteComponentProps} from "react-router-dom";
+import {NavLink, Route, Switch, RouteComponentProps} from "react-router-dom";
 import Home from "./components/home/Home";
 import Game from "./components/game/Game";
 import CounterContainer from "./containers/CounterContainer";
@@ -42,4 +42,4 @@ class App extends React.Component<RouteComponentProps> {
     }
 }
 
-export default withRouter(App);
+export default App;
