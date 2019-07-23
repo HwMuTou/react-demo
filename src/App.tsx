@@ -14,7 +14,7 @@ class App extends React.Component<RouteComponentProps> {
 
                 <Menu>
                     <Container>
-                        <Menu.Item as={'a'}>
+                        <Menu.Item>
                             <NavLink to={`/home`}>Home</NavLink>
                         </Menu.Item>
                         <Menu.Item>
