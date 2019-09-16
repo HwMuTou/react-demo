@@ -1,37 +1,45 @@
 import {Component} from "react"
 import Square from "./Square"
 import React from "react";
+import {range} from "lodash"
 
 class Board extends Component {
 
-    renderSquare = (i) => {
+    onClick = (index) => {
+        this.props.onClick(index)
+    };
+
+    renderSquare = (index) => {
         return (
-            <Square
-                value={this.props.squares[i]}
-                onClick={() => this.props.onClick(i)}
+            <Square key={index}
+                    value={this.props.squares[index]}
+                    onClick={() => this.onClick(index)}
             />
         );
     };
 
-    render() {
+    renderLine = (index, size) => {
+        return (
+            <div className="board-row" key={index}>
+                {
+                    range(0, size).map(value =>
+                        this.renderSquare(index * size + value)
+                    )
+                }
+            </div>
+        )
+    };
 
+    render() {
+        const {squares} = this.props;
+        const size = Math.sqrt(squares.length);
         return (
             <div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+                {
+                    range(0, size).map(index =>
+                        this.renderLine(index, size)
+                    )
+                }
             </div>
         );
     }

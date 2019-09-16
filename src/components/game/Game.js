@@ -1,27 +1,49 @@
 import React from "react"
 import Board from "./Board.js"
 import './Game.css'
+import {find, isEmpty} from "lodash";
 
-class Game extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
+class Game extends React.Component {
+
+    initState = () => {
+        const boardSize = this.boardSize();
+        return {
             history: [{
-                squares: Array(9).fill(null),
+                squares: Array(boardSize * boardSize).fill(null)
             }],
             stepNumber: 0,
             xIsNext: true,
-        };
+            winLength: this.winLength()
+        }
+    };
+
+    boardSize = () => {
+        const {boardSize} = this.props;
+        return boardSize || 10
+    };
+
+    winLength = () => {
+        const {winLength} = this.props;
+        return winLength || 3;
+    };
+
+    constructor(props) {
+        super(props);
+        this.state = this.initState();
     }
 
-    handleClick(i) {
+    restart = () => {
+        this.setState(this.initState())
+    };
+
+    handleClick = (index) => {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
-        if (this.calculateWinner(squares) || squares[i]) {
+        if (this.calculateWinner(squares) || squares[index]) {
             return;
         }
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        squares[index] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
             history: history.concat([{
                 squares: squares
@@ -29,14 +51,14 @@ class Game extends React.Component{
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
         });
-    }
+    };
 
-    jumpTo(step) {
+    jumpTo = (step) => {
         this.setState({
             stepNumber: step,
             xIsNext: (step % 2) === 0,
         });
-    }
+    };
 
     render() {
         const history = this.state.history;
@@ -66,10 +88,13 @@ class Game extends React.Component{
                 <div className="game-board">
                     <Board
                         squares={current.squares}
-                        onClick={(i) => this.handleClick(i)}
+                        onClick={this.handleClick}
                     />
                 </div>
                 <div className="game-info">
+                    <button onClick={this.restart}>
+                        Restart
+                    </button>
                     <div>{status}</div>
                     <ol>{moves}</ol>
                 </div>
@@ -77,24 +102,83 @@ class Game extends React.Component{
         );
     }
 
-    calculateWinner(squares) {
-        const lines = [
-            [0, 1, 2],
-            [3, 4, 5],
-            [6, 7, 8],
-            [0, 3, 6],
-            [1, 4, 7],
-            [2, 5, 8],
-            [0, 4, 8],
-            [2, 4, 6],
-        ];
-        for (let i = 0; i < lines.length; i++) {
-            const [a, b, c] = lines[i];
-            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                return squares[a];
+    calculateWinner = (squares) => {
+        return find(squares, (value, index) => {
+            if (this.haveWinner(value, index, squares)) {
+                return true
             }
+        });
+    };
+
+    haveWinner = (value, index, squares) => {
+        return this.rightWin(value, index, squares) ||
+            this.downWin(value, index, squares) ||
+            this.leftDownWin() ||
+            this.rightDownWin()
+    };
+
+    rightWin = (value, index, squares) => {
+        if (isEmpty(value)) {
+            return false;
         }
-        return null;
+
+        const winLength = this.winLength();
+        const boardSize = this.boardSize();
+
+        const maxBoardIndex = index + (boardSize - index % boardSize);
+
+        let nextIndex = index;
+        let haveNext = true;
+        let sameSize = 1;
+        do {
+            nextIndex = nextIndex + 1;
+            if (nextIndex < maxBoardIndex && squares[nextIndex] === value) {
+                sameSize += 1;
+            } else {
+                haveNext = false;
+            }
+
+            if (sameSize >= winLength) {
+                return true;
+            }
+        } while (haveNext);
+        return false;
+    };
+
+    downWin = (value, index, squares) => {
+        if (isEmpty(value)) {
+            return false;
+        }
+
+        const winLength = this.winLength();
+        const boardSize = this.boardSize();
+
+        const columnNum = index % boardSize;
+        let nextRowNum = (index - columnNum) / boardSize;
+        let haveNext = true;
+        let sameSize = 1;
+        do {
+            nextRowNum = nextRowNum + 1;
+            let nextIndex = nextRowNum * boardSize + columnNum;
+            if (nextRowNum < boardSize && squares[nextIndex] === value) {
+                sameSize += 1;
+            } else {
+                haveNext = false;
+            }
+
+            if (sameSize >= winLength) {
+                return true;
+            }
+        } while (haveNext);
+        return false;
+    };
+
+    leftDownWin = () => {
+        /*TODO */
+    };
+
+    rightDownWin = () => {
+        /*TODO */
     }
 }
 
