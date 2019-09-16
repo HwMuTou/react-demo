@@ -5,28 +5,32 @@ import Home from "./components/home/Home";
 import Game from "./components/game/Game";
 import CounterContainer from "./containers/CounterContainer";
 import TodoListContainer from "./containers/TodoListContainer";
-import {Container, Menu, Responsive} from "semantic-ui-react";
+import {Menu, Responsive} from "semantic-ui-react";
+import _ from 'lodash';
 
 class App extends React.Component<RouteComponentProps> {
+
+    urlWithName = {
+        "/home": "Home",
+        "/game": "Game",
+        "/counter": "Counter",
+        "/todo": "TODO"
+    };
+
     render() {
+        const path = this.props.location.pathname;
+        const urlWithName = this.urlWithName;
+
         return (
             <Responsive>
-
-                <Menu>
-                    <Container>
-                        <Menu.Item>
-                            <NavLink to={`/home`}>Home</NavLink>
-                        </Menu.Item>
-                        <Menu.Item>
-                            <NavLink to={`/game`}>Game</NavLink>
-                        </Menu.Item>
-                        <Menu.Item>
-                            <NavLink to={`/counter`}>Counter</NavLink>
-                        </Menu.Item>
-                        <Menu.Item>
-                            <NavLink to={`/todo`}>TODO</NavLink>
-                        </Menu.Item>
-                    </Container>
+                <Menu tabular>
+                    {
+                        _.map(urlWithName, (value, key) =>
+                            <Menu.Item active={path.endsWith(key)} key={key}>
+                                <NavLink to={key}>{value}</NavLink>
+                            </Menu.Item>
+                        )
+                    }
                 </Menu>
 
                 <Switch>
