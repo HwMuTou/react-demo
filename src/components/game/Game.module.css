@@ -41,6 +41,10 @@ ol, ul {
     justify-content: space-evenly;
 }
 
-.gameInfo {
+.gameInfo, .gameBoard {
     margin-left: 20px;
+}
+
+.winner {
+    color: #dd1a42;
 }

@@ -78,14 +78,14 @@ class Game extends React.Component {
 
         let status;
         if (winner) {
-            status = 'Winner: ' + winner;
+            status = <p className={style.winner}>{'Winner: ' + winner}</p>;
         } else {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
 
         return (
             <div className={style.game}>
-                <div className="game-board">
+                <div className={style.gameBoard}>
                     <Board
                         squares={current.squares}
                         onClick={this.handleClick}
