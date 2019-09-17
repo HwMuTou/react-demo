@@ -2,6 +2,7 @@ import React from "react"
 import Board from "./Board.js"
 import style from './Game.module.css'
 import _ from "lodash";
+import {Confirm} from "semantic-ui-react";
 
 class BoardGame extends React.Component {
 
@@ -60,12 +61,8 @@ class BoardGame extends React.Component {
         });
     };
 
-    render() {
-        const history = this.state.history;
-        const current = history[this.state.stepNumber];
-        const winner = this.calculateWinner(current.squares);
-
-        const moves = history.map((step, move) => {
+    movesRender = (history) => {
+        return history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
@@ -75,13 +72,23 @@ class BoardGame extends React.Component {
                 </li>
             );
         });
+    };
 
-        let status;
+    statusRender = (winner) => {
         if (winner) {
-            status = <p className={style.winner}>{'Winner: ' + winner}</p>;
+            return <p className={style.winner}>{'Winner: ' + winner}</p>;
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            return 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
+    };
+
+    render() {
+        const history = this.state.history;
+        const current = history[this.state.stepNumber];
+        const winner = this.calculateWinner(current.squares);
+
+        const moves = this.movesRender(history);
+        const status = this.statusRender(winner);
 
         return (
             <div className={style.game}>
@@ -103,8 +110,8 @@ class BoardGame extends React.Component {
     }
 
     calculateWinner = (squares) => {
-        return squares.some((value, index) => {
-            return this.haveWinner(value, index, squares);
+        return _.find(squares, (value, index) => {
+            return this.haveWinner(value, index, squares)
         });
     };
 
