@@ -1,7 +1,7 @@
 import React from "react"
 import Board from "./Board.js"
 import style from './Game.module.css'
-import {find, isEmpty} from "lodash";
+import _ from "lodash";
 
 class Game extends React.Component {
 
@@ -103,7 +103,7 @@ class Game extends React.Component {
     }
 
     calculateWinner = (squares) => {
-        return find(squares, (value, index) => {
+        return _.find(squares, (value, index) => {
             if (this.haveWinner(value, index, squares)) {
                 return true
             }
@@ -111,75 +111,89 @@ class Game extends React.Component {
     };
 
     haveWinner = (value, index, squares) => {
+        if (_.isEmpty(value)) {
+            return false;
+        }
+
         return this.rightWin(value, index, squares) ||
             this.downWin(value, index, squares) ||
-            this.leftDownWin() ||
-            this.rightDownWin()
+            this.leftDownWin(value, index, squares) ||
+            this.rightDownWin(value, index, squares)
     };
 
     rightWin = (value, index, squares) => {
-        if (isEmpty(value)) {
-            return false;
-        }
-
         const winLength = this.winLength();
         const boardSize = this.boardSize();
 
-        const maxBoardIndex = index + (boardSize - index % boardSize);
+        const rightSize = boardSize - (index % boardSize);
+        if (rightSize < winLength) {
+            return false;
+        }
 
-        let nextIndex = index;
-        let haveNext = true;
-        let sameSize = 1;
-        do {
-            nextIndex = nextIndex + 1;
-            if (nextIndex < maxBoardIndex && squares[nextIndex] === value) {
-                sameSize += 1;
-            } else {
-                haveNext = false;
-            }
-
-            if (sameSize >= winLength) {
-                return true;
-            }
-        } while (haveNext);
-        return false;
+        const nextIndex = function (index, boardSize, checkNum) {
+            return index + checkNum;
+        };
+        return this.enoughWin(value, index, squares, nextIndex)
     };
 
     downWin = (value, index, squares) => {
-        if (isEmpty(value)) {
-            return false;
-        }
-
         const winLength = this.winLength();
         const boardSize = this.boardSize();
 
-        const columnNum = index % boardSize;
-        let nextRowNum = (index - columnNum) / boardSize;
-        let haveNext = true;
+        const downSize = boardSize - Math.floor(index / boardSize);
+        if (downSize < winLength) {
+            return false;
+        }
+
+        const nextIndex = function (index, boardSize, checkNum) {
+            return index + boardSize * checkNum;
+        };
+        return this.enoughWin(value, index, squares, nextIndex)
+    };
+
+    leftDownWin = (value, index, squares) => {
+        const winLength = this.winLength();
+        const boardSize = this.boardSize();
+
+        const leftSize = index % boardSize;
+        if (leftSize < winLength) {
+            return false;
+        }
+
+        const nextIndex = function (index, boardSize, checkNum) {
+            return index + boardSize * checkNum - checkNum;
+        };
+        return this.enoughWin(value, index, squares, nextIndex)
+    };
+
+    rightDownWin = (value, index, squares) => {
+        const winLength = this.winLength();
+        const boardSize = this.boardSize();
+
+        const rightSize = boardSize - (index % boardSize);
+        if (rightSize < winLength) {
+            return false;
+        }
+
+        const nextIndex = function (index, boardSize, checkNum) {
+            return index + boardSize * checkNum + checkNum;
+        };
+        return this.enoughWin(value, index, squares, nextIndex)
+    };
+
+    enoughWin = (value, index, squares, nextIndexFun) => {
+        const winLength = this.winLength();
+        const boardSize = this.boardSize();
+
         let sameSize = 1;
-        do {
-            nextRowNum = nextRowNum + 1;
-            let nextIndex = nextRowNum * boardSize + columnNum;
-            if (nextRowNum < boardSize && squares[nextIndex] === value) {
+        for (const checkNum of _.range(1, winLength)) {
+            const nextIndex = nextIndexFun(index, boardSize, checkNum);
+            if (squares[nextIndex] === value) {
                 sameSize += 1;
-            } else {
-                haveNext = false;
             }
-
-            if (sameSize >= winLength) {
-                return true;
-            }
-        } while (haveNext);
-        return false;
+        }
+        return sameSize >= winLength;
     };
-
-    leftDownWin = () => {
-        /*TODO */
-    };
-
-    rightDownWin = () => {
-        /*TODO */
-    }
 }
 
 export default Game
