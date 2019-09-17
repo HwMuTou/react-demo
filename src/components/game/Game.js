@@ -103,10 +103,8 @@ class Game extends React.Component {
     }
 
     calculateWinner = (squares) => {
-        return _.some(squares, (value, index) => {
-            if (this.haveWinner(value, index, squares)) {
-                return true
-            }
+        return squares.some((value, index) => {
+            return this.haveWinner(value, index, squares);
         });
     };
 
