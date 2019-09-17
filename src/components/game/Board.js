@@ -3,6 +3,8 @@ import Square from "./Square"
 import React from "react";
 import {range} from "lodash"
 
+import style from './Game.module.css'
+
 class Board extends Component {
 
     onClick = (index) => {
@@ -20,7 +22,7 @@ class Board extends Component {
 
     renderLine = (index, size) => {
         return (
-            <div className="board-row" key={index}>
+            <div className={style.boardRow} key={index}>
                 {
                     range(0, size).map(value =>
                         this.renderSquare(index * size + value)

@@ -27,20 +27,20 @@ export interface TodoListComponentState {
 
 export class TodoList extends React.Component<TodoListProps, TodoListComponentState> {
 
-    public constructor(props: TodoListProps) {
+    constructor(props: TodoListProps) {
         super(props);
         this.state = {
             inputValue: ""
         }
     }
 
-    public onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         this.setState({
             inputValue: event.target.value
         })
     };
 
-    public onSubmit = () => {
+    onSubmit = () => {
         const {inputValue} = this.state;
         this.setState({inputValue: ""});
         this.props.addTodo({
@@ -49,7 +49,7 @@ export class TodoList extends React.Component<TodoListProps, TodoListComponentSt
         });
     };
 
-    public todoOnClick = (todo: Todo) => {
+    todoOnClick = (todo: Todo) => {
         if (todo.isDone) {
             this.props.reTodo({...todo, isDone: !todo.isDone});
         } else {
@@ -57,7 +57,7 @@ export class TodoList extends React.Component<TodoListProps, TodoListComponentSt
         }
     };
 
-    public todoListRender = () => {
+    todoListRender = () => {
         const todoList = dash.sortBy(this.props.todoList, (item: Todo) => item.value);
 
         return todoList.map((todo: Todo, index: number) => {
@@ -76,12 +76,14 @@ export class TodoList extends React.Component<TodoListProps, TodoListComponentSt
         })
     };
 
-    public render() {
+    render() {
+
+        const todoList = this.todoListRender();
 
         return (
             <div>
                 <MessageList>
-                    {this.todoListRender()}
+                    {todoList}
                 </MessageList>
 
                 <Form>

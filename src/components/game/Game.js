@@ -1,6 +1,6 @@
 import React from "react"
 import Board from "./Board.js"
-import './Game.css'
+import style from './Game.module.css'
 import {find, isEmpty} from "lodash";
 
 class Game extends React.Component {
@@ -84,14 +84,14 @@ class Game extends React.Component {
         }
 
         return (
-            <div className="game">
+            <div className={style.game}>
                 <div className="game-board">
                     <Board
                         squares={current.squares}
                         onClick={this.handleClick}
                     />
                 </div>
-                <div className="game-info">
+                <div className={style.gameInfo}>
                     <button onClick={this.restart}>
                         Restart
                     </button>

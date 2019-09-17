@@ -2,7 +2,7 @@ ol, ul {
     padding-left: 30px;
 }
 
-.board-row:after {
+.boardRow:after {
     clear: both;
     content: "";
     display: table;
@@ -41,6 +41,6 @@ ol, ul {
     justify-content: space-evenly;
 }
 
-.game-info {
+.gameInfo {
     margin-left: 20px;
 }

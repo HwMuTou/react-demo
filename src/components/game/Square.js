@@ -1,5 +1,7 @@
 import React from "react"
 
+import style from './Game.module.css'
+
 class Square extends React.Component {
 
     render() {
@@ -7,7 +9,7 @@ class Square extends React.Component {
         const {onClick, value} = this.props;
 
         return (
-            <button className="square" onClick={onClick}>
+            <button className={style.square} onClick={onClick}>
                 {value}
             </button>
         );
