@@ -1,5 +1,5 @@
 // 将 reducer 中的状态插入到组件的 props 中
-import NumberPicker, {NumberPickerState} from "../components/NumberPicker";
+import NumberPicker, {NumberPickerState} from "../components/number/NumberPicker";
 import {connect} from "react-redux";
 import {onValueChange} from "../actions/CounterAction";
 import {Dispatch} from "react";

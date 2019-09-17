@@ -1,6 +1,6 @@
-import {Button, Input, Segment, SegmentGroup} from "semantic-ui-react";
 import {ChangeEvent} from "react";
 import React from "react";
+import style from "./NumberPicker.module.scss"
 
 export interface NumberPickerState {
     number: number
@@ -46,30 +46,11 @@ class NumberPicker extends React.Component<NumberPickerProps, NumberPickerState>
         const number = this.state.number;
 
         return (
-            <SegmentGroup>
-                <Segment>
-                    <Button primary={true}
-                            content={"-"}
-                            onClick={this.onMinusClick}
-                            icon={"arrow alternate circle down"}
-                            labelPosition={"left"}
-                            label={number}/>
-                </Segment>
-
-                <Segment>
-                    <Button primary={true}
-                            content={"+"}
-                            onClick={this.onAddClick}
-                            icon={"arrow alternate circle up"}
-                            labelPosition={"left"}
-                            label={number}/>
-                </Segment>
-                <Segment>
-                    <Input value={number}
-                           onChange={this.onInputChange}
-                           label={"当前值"}/>
-                </Segment>
-            </SegmentGroup>
+            <div className={style.numberPicker}>
+                <button className={style.button} onClick={this.onMinusClick}>-</button>
+                <input value={number} onChange={this.onInputChange}/>
+                <button className={style.button} onClick={this.onAddClick}>+</button>
+            </div>
         )
     }
 }
