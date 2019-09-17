@@ -3,7 +3,7 @@ import Board from "./Board.js"
 import style from './Game.module.css'
 import _ from "lodash";
 
-class Game extends React.Component {
+class BoardGame extends React.Component {
 
     initState = () => {
         const boardSize = this.boardSize();
@@ -194,4 +194,4 @@ class Game extends React.Component {
     };
 }
 
-export default Game
+export default BoardGame

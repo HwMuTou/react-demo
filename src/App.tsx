@@ -2,7 +2,7 @@ import React from 'react';
 
 import {NavLink, Route, Switch, RouteComponentProps} from "react-router-dom";
 import Home from "./components/home/Home";
-import Game from "./components/game/Game";
+import BoardGame from "./components/board/BoardGame";
 import CounterContainer from "./containers/CounterContainer";
 import TodoListContainer from "./containers/TodoListContainer";
 import {Container, Menu} from "semantic-ui-react";
@@ -12,7 +12,7 @@ class App extends React.Component<RouteComponentProps> {
 
     pathToName = {
         "/home": "Home",
-        "/game": "Game",
+        "/game": "BoardGame",
         "/counter": "Counter",
         "/todo": "TODO"
     };
@@ -34,7 +34,7 @@ class App extends React.Component<RouteComponentProps> {
                 </Menu>
 
                 <Switch>
-                    <Route path={`/game`} component={Game}/>
+                    <Route path={`/game`} component={BoardGame}/>
                     <Route path={`/counter`} component={CounterContainer}/>
                     <Route path={`/todo`} component={TodoListContainer}/>
 
