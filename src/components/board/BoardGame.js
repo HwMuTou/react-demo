@@ -2,7 +2,6 @@ import React from "react"
 import Board from "./Board.js"
 import style from './Game.module.css'
 import _ from "lodash";
-import {Confirm} from "semantic-ui-react";
 
 class BoardGame extends React.Component {
 
