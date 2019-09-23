@@ -5,7 +5,7 @@ import Home from "./components/home/Home";
 import BoardGame from "./components/board/BoardGame";
 import CounterContainer from "./containers/CounterContainer";
 import TodoListContainer from "./containers/TodoListContainer";
-import {FlowerGarden} from "./page/FlowerGarden";
+import {FlowerGarden} from "./page/flower/FlowerGarden";
 import {Container, Menu} from "semantic-ui-react";
 import _ from 'lodash';
 
