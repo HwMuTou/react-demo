@@ -1,20 +1,29 @@
 
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .page {
     background: url(rounded.jpg) no-repeat bottom;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     justify-content: flex-start;
 
     min-height: 100vh;
+    width: 630px;
 
     font: 75% georgia, sans-serif;
+
+    padding: 0 0 100px 0;
 }
 
 .header {
-    background: url(header.jpg) no-repeat top left;
-    width: 642px;
+    background: url(header.jpg) no-repeat top center border-box;
+    width: 630px;
     height: 387px;
 }
 
@@ -31,12 +40,32 @@
 
 .content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .mainContent {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 0 0 0 60px;
+
+    width: 350px;
+}
+
+.paragraph a:link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #6D2542;
+}
+
+.paragraph a:visited {
+    font-weight: bold;
+    text-decoration: none;
+    color: #999999;
+}
+
+.paragraph a:hover, a:focus, a:active {
+    text-decoration: underline;
+    color: #999999;
 }
 
 .paragraph h3 {
@@ -44,6 +73,7 @@
     background-position: left top;
     width: 286px;
     height: 64px;
+
     margin-bottom: -5px;
 
     text-indent: 100%;
@@ -52,13 +82,147 @@
 }
 
 .paragraph p {
+    color: #999999;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 1.4em;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
 
+.paragraph p:last-child {
+    margin-bottom: 18px;
 }
 
 .preamble {
     background-image: url(title01.jpg);
 }
 
-.sidebarContent {
+.explanation {
+    background-image: url(title02.jpg);
+}
 
+.participation {
+    background-image: url(title03.jpg);
+}
+
+.benefits {
+    background-image: url(title04.jpg);
+}
+
+.requirements {
+    background-image: url(title05.jpg);
+}
+
+.sidebarContent {
+    color: #999999;
+    padding: 0 0 0 0;
+    width: 180px;
+    border: 0 dotted #666666;
+    background: transparent url(orchid.jpg) no-repeat bottom;
+    height: 810px;
+}
+
+.sidebarContent ul {
+    text-align: left;
+    list-style: none;
+    margin: 0 0 0 35px;
+    padding: 0 0 0 0;
+    font-size: 10px;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    border: 0 dotted #666666;
+    width: 120px;
+}
+
+.sidebarContent ul li {
+    margin: 0;
+    padding: 3px 0 3px 0;
+    border-bottom: 1px dotted #999999;
+}
+
+.sidebarContent ul li a, .sidebarContent ul li a:visited {
+    border-bottom: none;
+    outline: 0;
+}
+
+.sidebarContent ul li a:hover {
+    color: #999999;
+    text-decoration: underline;
+}
+
+.designSelection {
+    font-size: 0.9em;
+}
+
+.designSelection ul li {
+    width: 100%;
+    padding: 3px 0 3px 20px;
+    background: transparent url(bullet.jpg) no-repeat 2% 25%;
+    color: #999999;
+}
+
+.designSelection a {
+    font-size: 1.1em;
+    color: #6D2542;
+}
+
+.designSelection a.designerName {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    line-height: 0.9em;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 1.0em;
+    font-family: Geneva, Arial, Tahoma, sans-serif;
+    color: #999999;
+    letter-spacing: -1px;
+}
+
+.designSelection, .designArchives {
+    margin-bottom: 5px;
+    border: 0 solid #000000;
+}
+
+.designArchives ul li a, .zenResources ul li a {
+    color: #6D2542;
+}
+
+.designSelection h3, .designArchives h3, .zenResources h3 {
+    width: 196px;
+    padding: 0 0 0 35px;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #999999;
+}
+
+.designSelection ul:last-child, .designArchives ul:last-child, .zenResources ul:last-child {
+    margin-bottom: 35px;
+}
+
+footer {
+    text-align: left;
+    padding: 0 0 0 0;
+    margin: 0 0 0 60px;
+}
+
+footer a, footer a:visited {
+    padding: 5px;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    color: #666666;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+footer a:hover {
+    padding: 5px;
+    border: 1px solid #eeeeee;
+    background-color: #eeeeee;
+    color: #999999;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
 }
