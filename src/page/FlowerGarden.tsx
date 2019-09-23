@@ -212,6 +212,20 @@ export class FlowerGarden extends React.Component {
                             </div>
                         </div>
                     </div>
+
+                    <footer className={style.footer}>
+                        <a href="http://validator.w3.org/check/referer"
+                           title="Check the validity of this site’s HTML" className="zen-validate-html">HTML</a>
+                        <a href="http://jigsaw.w3.org/css-validator/check/referer"
+                           title="Check the validity of this site’s CSS" className="zen-validate-css">CSS</a>
+                        <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"
+                           title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike."
+                           className="zen-license">CC</a>
+                        <a href="http://mezzoblue.com/zengarden/faq/#aaa"
+                           title="Read about the accessibility of this site" className="zen-accessibility">A11y</a>
+                        <a href="https://github.com/mezzoblue/csszengarden.com" title="Fork this site on Github"
+                           className="zen-github">GH</a>
+                    </footer>
                 </div>
             </div>
         )
