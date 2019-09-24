@@ -8,35 +8,33 @@
     <title>Document</title>
 
     <style type="text/css">
-        .def {
+        .default {
             display: flex;
-            justify-content: center;
+            flex-direction: row;
+            justify-content: space-around;
 
-
-            width: 400px;
             height: 200px;
-            border-bottom: #6D2542 solid 3px;
+            border-bottom: #6D2542 solid 1px;
         }
 
-        .inner {
+        .innerOne {
             width: 180px;
-            height: 180px;
-            padding-bottom: 20px;
 
-            border: #6D2542 solid 3px;
+            border: #6D2542 solid 1px;
             border-bottom: 0;
             border-top-left-radius: 2%;
             border-top-right-radius: 2%;
+            margin-bottom: -1px;
 
-            background-color: rgba(0, 255, 255, 0.7);
+            background-color: rgba(0, 255, 255, 1);
         }
     </style>
 
 </head>
 <body>
-<div class="outer def">
-    <div class="inner def">
-    </div>
+<div class="default">
+    <div class="default innerOne"></div>
+    <div class="default innerOne"></div>
 </div>
 
 <div></div>
