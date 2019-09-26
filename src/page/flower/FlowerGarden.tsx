@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import style from "./Flower.module.css";
+import style from "./Flower.module.scss";
 
 export class FlowerGarden extends React.Component {
 
@@ -53,9 +53,9 @@ export class FlowerGarden extends React.Component {
                                     title="HyperText Markup Language">HTML</abbr>. This may seem daunting at first if
                                     you’ve never worked this way before, but follow the listed links to learn more, and
                                     use the sample files as a guide.</p>
-                                <p>Download the sample <a href="#"
+                                <p>Download the sample <a href="/#"
                                                           title="This page's source HTML code, not to be modified.">HTML</a> and <a
-                                    href="#"
+                                    href="/#"
                                     title="This page's sample CSS, the file you may modify.">CSS</a> to work on a copy
                                     locally. Once you have completed your masterpiece (and please, don’t submit
                                     half-finished work) upload your <abbr title="Cascading Style Sheets">CSS</abbr> file
@@ -120,40 +120,40 @@ s
                                 <nav role="navigation">
                                     <ul>
                                         <li>
-                                            <a href="#" className={style.designName}>Mid Century Modern</a> by <a
+                                            <a href="/#" className={style.designName}>Mid Century Modern</a> by <a
                                             href="http://andrewlohman.com/" className={style.designerName}>Andrew
                                             Lohman</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>Garments</a> by <a
+                                            <a href="/#" className={style.designName}>Garments</a> by <a
                                             href="http://danielmall.com/" className={style.designerName}>Dan Mall</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>Steel</a> by <a
+                                            <a href="/#" className={style.designName}>Steel</a> by <a
                                             href="http://steffen-knoeller.de" className={style.designerName}>Steffen
                                             Knoeller</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>Apothecary</a> by <a
+                                            <a href="/#" className={style.designName}>Apothecary</a> by <a
                                             href="http://trentwalton.com" className={style.designerName}>Trent
                                             Walton</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>Screen Filler</a> by <a
+                                            <a href="/#" className={style.designName}>Screen Filler</a> by <a
                                             href="http://elliotjaystocks.com/" className={style.designerName}>Elliot Jay
                                             Stocks</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>Fountain Kiss</a> by <a
+                                            <a href="/#" className={style.designName}>Fountain Kiss</a> by <a
                                             href="http://jeremycarlson.com" className={style.designerName}>Jeremy
                                             Carlson</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>A Robot Named Jimmy</a> by <a
+                                            <a href="/#" className={style.designName}>A Robot Named Jimmy</a> by <a
                                             href="http://meltmedia.com/" className={style.designerName}>meltmedia</a>
                                         </li>
                                         <li>
-                                            <a href="#" className={style.designName}>Verde Moderna</a> by <a
+                                            <a href="/#" className={style.designName}>Verde Moderna</a> by <a
                                             href="http://www.mezzoblue.com/" className={style.designerName}>Dave
                                             Shea</a>
                                         </li>
@@ -166,7 +166,7 @@ s
                                 <nav role="navigation">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="/#">
                                                 Next Designs <span className="indicator">&rsaquo;</span>
                                             </a>
                                         </li>
@@ -183,7 +183,7 @@ s
                                 <h3>Resources:</h3>
                                 <ul>
                                     <li>
-                                        <a href="#"
+                                        <a href="/#"
                                            title="View the source CSS file of the currently-viewed design.">
                                             View This Design&#8217;s <abbr title="Cascading Style Sheets">CSS</abbr>
                                         </a>
