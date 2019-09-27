@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react_demo/static/css/main.77b5c4d5.chunk.css",
-    "main.js": "/react_demo/static/js/main.d976ea15.chunk.js",
-    "main.js.map": "/react_demo/static/js/main.d976ea15.chunk.js.map",
-    "runtime~main.js": "/react_demo/static/js/runtime~main.27d5aae1.js",
-    "runtime~main.js.map": "/react_demo/static/js/runtime~main.27d5aae1.js.map",
-    "static/css/2.0745c72b.chunk.css": "/react_demo/static/css/2.0745c72b.chunk.css",
-    "static/js/2.e3bdd44a.chunk.js": "/react_demo/static/js/2.e3bdd44a.chunk.js",
-    "static/js/2.e3bdd44a.chunk.js.map": "/react_demo/static/js/2.e3bdd44a.chunk.js.map",
-    "index.html": "/react_demo/index.html",
-    "precache-manifest.85b1b3d868ae4112d8621ec764a89014.js": "/react_demo/precache-manifest.85b1b3d868ae4112d8621ec764a89014.js",
-    "service-worker.js": "/react_demo/service-worker.js",
-    "static/css/2.0745c72b.chunk.css.map": "/react_demo/static/css/2.0745c72b.chunk.css.map",
-    "static/css/main.77b5c4d5.chunk.css.map": "/react_demo/static/css/main.77b5c4d5.chunk.css.map",
-    "static/media/semantic.min.css": "/react_demo/static/media/outline-icons.ef60a4f6.woff",
-    "static/media/Flower.module.scss": "/react_demo/static/media/title02.4168068d.jpg",
-    "static/media/logo.svg": "/react_demo/static/media/logo.5d5d9eef.svg"
+    "main.css": "./static/css/main.16137817.chunk.css",
+    "main.js": "./static/js/main.606b1a11.chunk.js",
+    "main.js.map": "./static/js/main.606b1a11.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/css/2.4d5eed7a.chunk.css": "./static/css/2.4d5eed7a.chunk.css",
+    "static/js/2.e3bdd44a.chunk.js": "./static/js/2.e3bdd44a.chunk.js",
+    "static/js/2.e3bdd44a.chunk.js.map": "./static/js/2.e3bdd44a.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.c0769c56fe404b210c2b0343adf6cbad.js": "./precache-manifest.c0769c56fe404b210c2b0343adf6cbad.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.4d5eed7a.chunk.css.map": "./static/css/2.4d5eed7a.chunk.css.map",
+    "static/css/main.16137817.chunk.css.map": "./static/css/main.16137817.chunk.css.map",
+    "static/media/semantic.min.css": "./static/media/outline-icons.ef60a4f6.woff",
+    "static/media/Flower.module.scss": "./static/media/title02.4168068d.jpg",
+    "static/media/logo.svg": "./static/media/logo.5d5d9eef.svg"
   }
 }
