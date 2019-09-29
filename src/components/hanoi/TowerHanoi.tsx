@@ -15,7 +15,8 @@ type TowerHanoiStates = {
     pagA: LinkedList<DiscState>,
     pagB: LinkedList<DiscState>,
     pagC: LinkedList<DiscState>,
-    colors: string[]
+    colors: string[],
+    height: number
 }
 
 export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiStates> {
@@ -23,7 +24,7 @@ export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiState
     public constructor(props: TowerHanoiProps) {
         super(props);
 
-        const height = props.height | 3;
+        const height = props.height | 4;
 
         const pagOne = new LinkedList<DiscState>();
         _.range(1, height + 1).forEach((size) => {
@@ -38,7 +39,8 @@ export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiState
             pagA: pagOne,
             pagB: new LinkedList<DiscState>(),
             pagC: new LinkedList<DiscState>(),
-            colors: colors
+            colors: colors,
+            height: height
         }
     }
 
@@ -60,8 +62,7 @@ export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiState
 
     discRender = (size: number, pag: string) => {
         const {colors} = this.state;
-        let width = `${200 + size * 50}px`;
-        const top = `${size * 50}px`;
+        let width = `${100 - 50 / size}%`;
         const border = `${colors[size - 1]} solid 10px`;
 
         return (
@@ -69,11 +70,11 @@ export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiState
                  draggable={true}
                  style={{
                      width: width,
-                     height: "100px",
+                     height: "15%",
                      border: border,
                      borderRadius: "50%",
-                     top: top,
-                     cursor: "move"
+                     cursor: "move",
+                     marginBottom: "25px"
                  }}
                  onDragStart={(event) => this.onDragStart(event, pag)}
             />
