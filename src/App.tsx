@@ -8,6 +8,7 @@ import TodoListContainer from "./containers/TodoListContainer";
 import {FlowerGarden} from "./page/flower/FlowerGarden";
 import {Container, Menu} from "semantic-ui-react";
 import _ from 'lodash';
+import {TowerHanoi} from "./components/hanoi/TowerHanoi";
 
 class App extends React.Component<RouteComponentProps> {
 
@@ -16,7 +17,8 @@ class App extends React.Component<RouteComponentProps> {
         "/game": "BoardGame",
         "/counter": "Counter",
         "/todo": "TODO",
-        "/FlowerGarden": "FlowerGarden"
+        "/FlowerGarden": "FlowerGarden",
+        "/TowerHanoi": "TowerHanoi"
     };
 
     render() {
@@ -40,6 +42,7 @@ class App extends React.Component<RouteComponentProps> {
                     <Route path={`/counter`} component={CounterContainer}/>
                     <Route path={`/todo`} component={TodoListContainer}/>
                     <Route path={`/FlowerGarden`} component={FlowerGarden}/>
+                    <Route path={`/TowerHanoi`} component={TowerHanoi}/>
 
                     <Route component={Home}/>
                 </Switch>

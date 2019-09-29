@@ -1,0 +1,17 @@
+.content {
+  display: flex;
+  justify-content: space-around;
+
+  & > div {
+    border: black solid 2px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 500px;
+    height: 500px;
+  }
+
+}
