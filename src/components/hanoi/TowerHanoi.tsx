@@ -14,7 +14,8 @@ type DiscState = {
 type TowerHanoiStates = {
     pagA: LinkedList<DiscState>,
     pagB: LinkedList<DiscState>,
-    pagC: LinkedList<DiscState>
+    pagC: LinkedList<DiscState>,
+    colors: string[]
 }
 
 export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiStates> {
@@ -31,10 +32,13 @@ export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiState
             })
         });
 
+        const colors = _.range(1, height + 1).map(() => `rgba(${_.random(1, 255)},${_.random(1, 255)},${_.random(1, 255)},0.9)`)
+
         this.state = {
             pagA: pagOne,
             pagB: new LinkedList<DiscState>(),
-            pagC: new LinkedList<DiscState>()
+            pagC: new LinkedList<DiscState>(),
+            colors: colors
         }
     }
 
@@ -55,9 +59,10 @@ export class TowerHanoi extends React.Component<TowerHanoiProps, TowerHanoiState
     };
 
     discRender = (size: number, pag: string) => {
+        const {colors} = this.state;
         let width = `${200 + size * 50}px`;
         const top = `${size * 50}px`;
-        const border = `rgba(${_.random(1, 255)},${_.random(1, 255)},${_.random(1, 255)},0.9) solid 10px`;
+        const border = `${colors[size - 1]} solid 10px`;
 
         return (
             <div key={size}
