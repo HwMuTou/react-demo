@@ -9,6 +9,7 @@ import {FlowerGarden} from "./page/flower/FlowerGarden";
 import {Container, Menu} from "semantic-ui-react";
 import _ from 'lodash';
 import {TowerHanoi} from "./components/hanoi/TowerHanoi";
+import {Fibonacci} from "./components/fibonacci/Fibonacci";
 
 class App extends React.Component<RouteComponentProps> {
 
@@ -18,7 +19,8 @@ class App extends React.Component<RouteComponentProps> {
         "/counter": "Counter",
         "/todo": "TODO",
         "/FlowerGarden": "FlowerGarden",
-        "/TowerHanoi": "TowerHanoi"
+        "/TowerHanoi": "TowerHanoi",
+        "/Fibonacci": "Fibonacci"
     };
 
     render() {
@@ -43,6 +45,7 @@ class App extends React.Component<RouteComponentProps> {
                     <Route path={`/todo`} component={TodoListContainer}/>
                     <Route path={`/FlowerGarden`} component={FlowerGarden}/>
                     <Route path={`/TowerHanoi`} component={TowerHanoi}/>
+                    <Route path={`/Fibonacci`} component={Fibonacci}/>
 
                     <Route component={Home}/>
                 </Switch>
