@@ -10,6 +10,7 @@ import {Container, Menu} from "semantic-ui-react";
 import _ from 'lodash';
 import {TowerHanoi} from "./components/hanoi/TowerHanoi";
 import {Fibonacci} from "./components/fibonacci/Fibonacci";
+import {ShowThis} from "./components/fun/ShowThis";
 
 class App extends React.Component<RouteComponentProps> {
 
@@ -46,6 +47,9 @@ class App extends React.Component<RouteComponentProps> {
                     <Route path={`/FlowerGarden`} component={FlowerGarden}/>
                     <Route path={`/TowerHanoi`} component={TowerHanoi}/>
                     <Route path={`/Fibonacci`} component={Fibonacci}/>
+                    <div>
+                        <ShowThis/>
+                    </div>
 
                     <Route component={Home}/>
                 </Switch>
