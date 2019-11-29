@@ -21,7 +21,8 @@ class App extends React.Component<RouteComponentProps> {
         "/todo": "TODO",
         "/FlowerGarden": "FlowerGarden",
         "/TowerHanoi": "TowerHanoi",
-        "/Fibonacci": "Fibonacci"
+        "/Fibonacci": "Fibonacci",
+        "/ShowThis": "ShowThis"
     };
 
     render() {
@@ -40,19 +41,19 @@ class App extends React.Component<RouteComponentProps> {
                     }
                 </Menu>
 
-                <Switch>
-                    <Route path={`/game`} component={BoardGame}/>
-                    <Route path={`/counter`} component={CounterContainer}/>
-                    <Route path={`/todo`} component={TodoListContainer}/>
-                    <Route path={`/FlowerGarden`} component={FlowerGarden}/>
-                    <Route path={`/TowerHanoi`} component={TowerHanoi}/>
-                    <Route path={`/Fibonacci`} component={Fibonacci}/>
-                    <div>
-                        <ShowThis/>
-                    </div>
+                <React.Fragment>
+                    <Switch>
+                        <Route path={`/game`} component={BoardGame}/>
+                        <Route path={`/counter`} component={CounterContainer}/>
+                        <Route path={`/todo`} component={TodoListContainer}/>
+                        <Route path={`/FlowerGarden`} component={FlowerGarden}/>
+                        <Route path={`/TowerHanoi`} component={TowerHanoi}/>
+                        <Route path={`/Fibonacci`} component={Fibonacci}/>
+                        <Route path={`/ShowThis`} component={ShowThis}/>
 
-                    <Route component={Home}/>
-                </Switch>
+                        <Route component={Home}/>
+                    </Switch>
+                </React.Fragment>
 
             </Container>
         )
